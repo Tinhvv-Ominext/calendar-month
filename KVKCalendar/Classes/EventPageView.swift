@@ -58,6 +58,10 @@ final class EventPageView: UIView {
     
     private func updateLayout(_ frame: CGRect) {
         
+        if frame.width < 40 {
+            return
+        }
+        
         var timeHeight: CGFloat = 15
         var nameHeight: CGFloat = 15
         let avatarSize: CGFloat = 30
@@ -67,8 +71,8 @@ final class EventPageView: UIView {
                 // Nothing to change
             } else if frame.width >= 40 {
                 if frame.height >= 110 {
-                    timeHeight = 30
-                    nameHeight = 30
+                    timeHeight = avatarSize
+                    nameHeight = avatarSize
                 }
             } else {
                 return
